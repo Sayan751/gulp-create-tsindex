@@ -51,7 +51,7 @@ module.exports = function(file, opt) {
 			cwd = file.cwd;			
 			
 			contentBuilder.append('export * from "./');
-			contentBuilder.append(path.basename(file.path));
+			contentBuilder.append(path.basename(file.path, ext));
 			contentBuilder.appendLine('";');
 		}
 
