@@ -1,0 +1,15 @@
+{
+  "name": "gulp-create-tsindex",
+  "version": "1.0.0",
+  "description": "Creates an index for your typescript files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Net at Work GmbH",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "gulp-util": "^3.0.7",
+    "through2": "^2.0.1"
+  }
+}
