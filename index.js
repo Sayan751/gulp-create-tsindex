@@ -25,6 +25,8 @@ module.exports = function(file, opt) {
 		throw new PluginError('gulp-create-tsindex', 'Missing file for gulp-create-tsindex');
 	}
 
+	var outputFilePath = path.dirname(fileName);
+
 	function bufferContents(file, enc, cb) {
 			
 		if (file.isNull()) {
@@ -51,7 +53,7 @@ module.exports = function(file, opt) {
 			cwd = file.cwd;			
 			
 			contentBuilder.append('export * from "./');
-			contentBuilder.append(path.basename(file.path, ext));
+			contentBuilder.append(path.relative(outputFilePath,file.path).replace(/\\/g, "/").replace(ext,""));
 			contentBuilder.appendLine('";');
 		}
 
