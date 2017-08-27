@@ -16,6 +16,7 @@ module.exports = function(file, opt) {
 	var fileName;
 	var contentBuilder;
 	var cwd;
+	var ignoreToken = opt.ignoreToken || "/// tsindex:ignore";
 
 	if (typeof file === 'string') {
 		fileName = file;
@@ -39,6 +40,12 @@ module.exports = function(file, opt) {
 			cb();
 			return;
 		}
+
+		if(file.contents.toString().startsWith(ignoreToken)){
+			gutil.log(`${path.basename(file.path)} is ignored from tsindex due to the presence of the token '${ignoreToken}'.`);
+			cb();
+			return;
+		}		
 		
 		var ext = path.extname(file.path);
 		var ext2 = path.extname(path.basename(file.path, ext));
