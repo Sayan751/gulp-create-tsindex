@@ -1,6 +1,6 @@
 {
   "name": "gulp-create-tsindex",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Creates an index for your typescript files.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,6 @@
     "fancy-log": "^1.3.2",
     "gulp": "^3.9.1",
     "plugin-error": "^1.0.1",
-    "stringbuilder": "0.0.11",
     "through2": "^2.0.1",
     "vinyl": "^2.1.0"
   }
