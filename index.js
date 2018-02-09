@@ -2,11 +2,11 @@
 
 var through = require('through2');
 var path = require('path');
-var gutil = require('gulp-util');
 var StringBuilder = require('stringbuilder');
 var fs = require('fs');
-var PluginError = gutil.PluginError;
-var File = gutil.File;
+var PluginError = require("plugin-error");
+var File = require("vinyl");
+var log = require("fancy-log");
 
 module.exports = function(file, opt) {
 	
@@ -42,7 +42,7 @@ module.exports = function(file, opt) {
 		}
 
 		if(file.contents.toString().startsWith(ignoreToken)){
-			gutil.log(`${path.basename(file.path)} is ignored from tsindex due to the presence of the token '${ignoreToken}'.`);
+			log(`${path.basename(file.path)} is ignored from tsindex due to the presence of the token '${ignoreToken}'.`);
 			cb();
 			return;
 		}		
@@ -86,7 +86,7 @@ module.exports = function(file, opt) {
 				});
 						
 			this.push(indexFile);
-			gutil.log("Typescript index created");
+			log("Typescript index created");
 			cb();
 		});
 	}
