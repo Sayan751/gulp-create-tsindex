@@ -63,6 +63,9 @@ If you don't like the default token, you can configure it via build task:
 
   This strategy is too simple for you? Let us know.
 
+### Append to existing index file
+If there is already an index file present, and you want to append the genereated index on top of it, you can do that as well. This makes sense if you use your generated index file as your `main` file in `package.json`. For example, 
+
 ## License
 
 [Apache 2.0](/license.txt)
